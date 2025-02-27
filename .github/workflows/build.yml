@@ -34,7 +34,7 @@ jobs:
         run: |
           # Install require dependencies
           sudo apt update -y
-          sudo apt install bc binutils-dev bison build-essential ccache curl flex git libelf-dev lld llvm make python3-dev cpio python-is-python3 tar perl wget lz4 unzip -y
+          sudo apt install bc binutils-dev bison build-essential ccache curl flex git libelf-dev lld make python3-dev cpio python-is-python3 tar perl wget lz4 unzip -y
           git clone https://github.com/bachnxuan/AnyKernel3.git AnyKernel3
           cd AnyKernel3 && rm -rf .git .github && cd ..
       - name: Setup ccache
