@@ -49,10 +49,11 @@ jobs:
           git clone $AOSP_MIRROR/kernel/prebuilts/build-tools -b $BRANCH --depth 1 kernel-build-tools
           git clone $AOSP_MIRROR/platform/system/tools/mkbootimg -b $BRANCH --depth 1 mkbootimg
           # git clone --depth 1 https://github.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r416183b clang-tc
-          mkdir clang-tc
-          wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r536225.tar.gz # AOSP Clang 19.0.1
-          tar -xvzf clang-r536225.tar.gz
-          rm -rf clang-r536225.tar.gz
+          # mkdir clang-tc
+          git clone --depth 1 https://gitlab.com/rvproject27/RvClang.git -b release/19.x clang-tc
+          # wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r536225.tar.gz # AOSP Clang 19.0.1
+          # tar -xvzf clang-r536225.tar.gz
+          # rm -rf clang-r536225.tar.gz
       - name: Set boot sign key
         env:
           BOOT_SIGN_KEY: ${{ secrets.BOOT_SIGN_KEY }}
