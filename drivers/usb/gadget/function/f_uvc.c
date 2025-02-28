@@ -290,7 +290,6 @@ uvc_function_setup(struct usb_function *f, const struct usb_ctrlrequest *ctrl)
 
 		v4l2_event_queue(&uvc->vdev, &v4l2_event);
 	}
->>>>>>> 9586237b6ff6 (FROMLIST: usb: gadget: uvc: enqueue usb request in setup handler for control OUT)
 
 	return 0;
 }
